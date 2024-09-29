@@ -2,11 +2,11 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.77.0"
+      version = "~> 4.3.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~>2.44.1"
+      version = "~>3.0.1"
     }
   }
   required_version = ">= 1.1.0"
@@ -62,4 +62,9 @@ variable "CLIENT_SECRET" {
 
 variable "ENVIRONMENT" {
   type = string
+}
+
+variable "PROJECT_COMMON_NAME" {
+  type    = string
+  default = "internaldomaincerts"
 }
