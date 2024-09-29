@@ -77,13 +77,11 @@ variable "CLOUDFLARE_TOKEN" {
 }
 
 variable "ROOT_DOMAIN_NAME" {
-  type    = string
-  default = "internal.ivica-matic.com"
+  type = string
 }
 
 variable "LETSENCRYPT_EMAIL_ADDRESS" {
-  type    = string
-  default = "ivica-matic@outlook.com"
+  type = string
 }
 
 variable "PROJECT_COMMON_NAME" {
