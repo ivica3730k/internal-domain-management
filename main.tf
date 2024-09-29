@@ -8,6 +8,10 @@ terraform {
       source  = "hashicorp/azuread"
       version = "~>3.0.1"
     }
+    acme = {
+      source  = "vancluever/acme"
+      version = "~> 2.18.0"
+    }
   }
   required_version = ">= 1.1.0"
   backend "azurerm" {
@@ -44,6 +48,10 @@ provider "azuread" {
   client_secret = var.CLIENT_SECRET
 }
 
+provider "acme" {
+  server_url = "https://acme-v02.api.letsencrypt.org/directory"
+}
+
 variable "SUBSCRIPTION_ID" {
   type = string
 }
@@ -62,6 +70,20 @@ variable "CLIENT_SECRET" {
 
 variable "ENVIRONMENT" {
   type = string
+}
+
+variable "CLOUDFLARE_TOKEN" {
+  type = string
+}
+
+variable "ROOT_DOMAIN_NAME" {
+  type    = string
+  default = "internal.ivica-matic.com"
+}
+
+variable "LETSENCRYPT_EMAIL_ADDRESS" {
+  type    = string
+  default = "ivica-matic@outlook.com"
 }
 
 variable "PROJECT_COMMON_NAME" {

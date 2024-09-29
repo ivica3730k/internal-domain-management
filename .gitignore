@@ -31,3 +31,5 @@ override.tf.json
 provider_secrets
 .terraform.lock.hcl
 .env
+
+ssl_certificates
