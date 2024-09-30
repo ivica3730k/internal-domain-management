@@ -7,7 +7,7 @@ In addition to the above, this template also includes a GitHub Actions workflow 
 
 ## Prerequisites
 - Azure subscription
-- Azure Service Principal with appropriate access to the subscription and the Active Directory tenant
+- Azure Service Principal with appropriate access to the Billing subscription and the Active Directory tenant
 - Azure storage account for storing the remote state
 
 ## Service Principal Setup
@@ -30,9 +30,9 @@ TF_VAR_SUBSCRIPTION_ID=---------------
 TF_VAR_TENANT_ID=---------------
 TF_VAR_CLIENT_ID=------------------
 TF_VAR_CLIENT_SECRET=---------------------------
-TF_VAR_STATE_RESOURCE_GROUP_NAME=terraform-states
-TF_VAR_STATE_STORAGE_ACCOUNT_NAME=icecloudtfstates
-TF_VAR_STATE_CONTAINER_NAME=terraform-state-icecloud-prod
+TF_VAR_STATE_RESOURCE_GROUP_NAME=-----------
+TF_VAR_STATE_STORAGE_ACCOUNT_NAME=----------
+TF_VAR_STATE_CONTAINER_NAME=----------
 TF_VAR_ENVIRONMENT=prod
 
 ```
