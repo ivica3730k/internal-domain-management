@@ -2,18 +2,21 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 4.3.0"
+      version = "4.3.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = "~>3.0.1"
+      version = "3.0.1"
     }
     acme = {
       source  = "vancluever/acme"
-      version = "~> 2.18.0"
+      version = "2.26.0"
+    }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "4.43.0"
     }
   }
-  required_version = ">= 1.1.0"
   backend "azurerm" {
     # will get configured with -backend-config= in the terraform init -upgrade command
     # the backend config file will be created using envsubst and provider_secrets_template file
@@ -52,6 +55,11 @@ provider "acme" {
   server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }
 
+provider "cloudflare" {
+  api_token = var.CLOUDFLARE_TOKEN
+
+}
+
 variable "SUBSCRIPTION_ID" {
   type = string
 }
@@ -74,6 +82,11 @@ variable "ENVIRONMENT" {
 
 variable "CLOUDFLARE_TOKEN" {
   type = string
+}
+
+variable "CLOUDFLARE_ZONE_ID" {
+  type = string
+
 }
 
 variable "ROOT_DOMAIN_NAME" {
