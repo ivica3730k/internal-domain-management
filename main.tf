@@ -17,7 +17,6 @@ terraform {
       version = "4.43.0"
     }
   }
-  required_version = "1.5.5"
   backend "azurerm" {
     # will get configured with -backend-config= in the terraform init -upgrade command
     # the backend config file will be created using envsubst and provider_secrets_template file
