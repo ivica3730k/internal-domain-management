@@ -12,6 +12,10 @@ terraform {
       source  = "vancluever/acme"
       version = "~> 2.18.0"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
   }
   required_version = ">= 1.1.0"
   backend "azurerm" {
@@ -52,6 +56,11 @@ provider "acme" {
   server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }
 
+provider "cloudflare" {
+  api_token = var.CLOUDFLARE_TOKEN
+
+}
+
 variable "SUBSCRIPTION_ID" {
   type = string
 }
@@ -74,6 +83,11 @@ variable "ENVIRONMENT" {
 
 variable "CLOUDFLARE_TOKEN" {
   type = string
+}
+
+variable "CLOUDFLARE_ZONE_ID" {
+  type = string
+
 }
 
 variable "ROOT_DOMAIN_NAME" {

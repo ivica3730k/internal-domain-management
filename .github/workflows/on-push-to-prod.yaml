@@ -47,6 +47,7 @@ jobs:
       TF_VAR_ROOT_DOMAIN_NAME: ${{ secrets.TF_VAR_ROOT_DOMAIN_NAME }}
       TF_VAR_LETSENCRYPT_EMAIL_ADDRESS: ${{ secrets.TF_VAR_LETSENCRYPT_EMAIL_ADDRESS }}
       TF_VAR_CLOUDFLARE_TOKEN: ${{ secrets.TF_VAR_CLOUDFLARE_TOKEN }}
+      TF_VAR_CLOUDFLARE_ZONE_ID: ${{ secrets.TF_VAR_CLOUDFLARE_ZONE_ID }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
