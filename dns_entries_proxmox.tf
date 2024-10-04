@@ -1,3 +1,11 @@
+resource "cloudflare_record" "proxmox-a-record" {
+  type    = "A"
+  ttl     = 60
+  zone_id = var.CLOUDFLARE_ZONE_ID
+  name    = "proxmox.${var.ROOT_DOMAIN_NAME}"
+  content = "172.16.0.1"
+}
+
 resource "cloudflare_record" "internet-router-gw-proxmox-a-record" {
   type    = "A"
   ttl     = 60
