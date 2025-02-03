@@ -71,7 +71,7 @@ jobs:
           exit ${PIPESTATUS[0]}
         continue-on-error: true
       - name: Save init output into artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: init-${{ github.run_number }}
           path: init.txt
@@ -104,7 +104,7 @@ jobs:
           exit ${PIPESTATUS[0]}
         continue-on-error: true
       - name: Save validate.txt into artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: validate-${{ github.run_number }}
           path: validate.txt
@@ -137,7 +137,7 @@ jobs:
           exit ${PIPESTATUS[0]}
         continue-on-error: true
       - name: Store apply output into artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: apply-${{ github.run_number }}
           path: apply-output.txt

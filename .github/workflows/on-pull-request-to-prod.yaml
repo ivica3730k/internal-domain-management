@@ -68,7 +68,7 @@ jobs:
           cat init.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: Make artifact with init
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: init-${{ github.run_number }}
           path: init.txt
@@ -94,7 +94,7 @@ jobs:
           exit ${PIPESTATUS[0]}
         continue-on-error: true
       - name: Save validate.txt into artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: validate-${{ github.run_number }}
           path: validate.txt
@@ -128,7 +128,7 @@ jobs:
           exit ${PIPESTATUS[0]}
         continue-on-error: true
       - name: Make artifact with plan
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: plan-${{ github.run_number }}
           path: plan.txt
@@ -136,7 +136,7 @@ jobs:
         run: |
           cat plan.txt | grep -v "Refreshing state" > plan-filtered.txt
       - name: Save filtered plan into artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: plan-filtered-${{ github.run_number }}
           path: plan-filtered.txt
